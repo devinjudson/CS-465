@@ -1,6 +1,6 @@
 # Travlr Getaways
 
-CS 465 Full Stack Development with MEAN
+Full Stack Development with MEAN
 
 **Architecture**
 In my full stack project, I used multiple frontend approaches: Express-generated HTML, plain JavaScript, and an Angular single-page application (SPA). Express and JavaScript followed a traditional server-rendered model, suitable for simpler applications but limited in interactivity. In contrast, the Angular SPA provided a dynamic, seamless user experience by updating views without full page reloads, making it ideal for building a modern, feature-rich app.
