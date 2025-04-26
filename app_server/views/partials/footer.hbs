@@ -1,30 +1,33 @@
 <div id="footer">
     <div>
         <ul class="navigation">
-            <li>
-                <a href="index.html">Home</a>
+            <li class="{{#if (eq activePage 'home')}}active{{/if}}">
+                <a href='/'>Home</a>
             </li>
-            <li class="active">
-                <a href="/travel">Travel</a>
+            <li class="{{#if (eq activePage 'travel')}}active{{/if}}">
+                <a href='/travel'>Travel</a>
             </li>
-            <li>
-                <a href="rooms.html">Rooms</a>
+            <li class="{{#if (eq activePage 'rooms')}}active{{/if}}">
+                <a href="/rooms">Rooms</a>
             </li>
-            <li>
-                <a href="meals.html">Meals</a>
+            <li class="{{#if (eq activePage 'meals')}}active{{/if}}">
+                <a href="/meals">Meals</a>
             </li>
-            <li>
+            <li class="{{#if (eq activePage 'news')}}active{{/if}}">
                 <a href="news.html">News</a>
             </li>
-            <li>
+            <li class="{{#if (eq activePage 'about')}}active{{/if}}">
                 <a href="about.html">About</a>
             </li>
-            <li>
+            <li class="{{#if (eq activePage 'contact')}}active{{/if}}">
                 <a href="contact.html">Contact</a>
             </li>
         </ul>
         <div id="connect">
-            <a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
+            <a href="http://pinterest.com/fwtemplates/" target="_blank" class="pinterest"></a> <a
+                href="http://freewebsitetemplates.com/go/facebook/" target="_blank" class="facebook"></a> <a
+                href="http://freewebsitetemplates.com/go/twitter/" target="_blank" class="twitter"></a> <a
+                href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" class="googleplus"></a>
         </div>
     </div>
     <p>

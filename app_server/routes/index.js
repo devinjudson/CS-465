@@ -1,8 +1,7 @@
-var express = require('express');
-var router = express.Router();
-const ctrlMain = require('../controllers/main');
+const router = require("express").Router();
+const ctrlMain = require("../controllers/index");
 
 /* GET home page. */
-router.get('/', ctrlMain.index);
+router.get("/", ctrlMain.index);
 
 module.exports = router;

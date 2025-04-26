@@ -1,20 +1,32 @@
-const express = require('express');
-const router = express.Router();
+require("dotenv").config();
+const router = require("express").Router();
+const { expressjwt: jwt } = require("express-jwt");
 
-//This is where we import the controllers we will route
-const tripsController = require('../controllers/trips');
+const auth = jwt({
+  secret: process.env.JWT_SECRET,
+  userProperty: "payload",
+  algorithms: ["HS256"],
+});
 
-// define route for our trips endpoint
-router
-    .route('/trips')
-    .get(tripsController.tripsList) //GET Method routes tripList
-    .post(tripsController.tripsAddTrip); //POST Method Adds a Trip
+// Import controllers
+const {
+  getTrips,
+  getTripByCode,
+  addTrip,
+  updateTrip,
+} = require("../controllers/trips");
+const { login, register } = require("../controllers/authentication");
 
-//GET Method routes tripsFindCode - requires parameter
-//PUT Method routes tripsUpdateTrip - requires parameter
-router
-    .route('/trips/:tripCode')
-    .get(tripsController.tripsFindByCode)
-    .put(tripsController.tripsUpdateTrip)
+// Define route for our trips endpoint
+router.route("/trips").get(getTrips).post(auth, addTrip);
+
+// GET Method routes getTripByCode
+router.route("/trips/:tripCode").get(getTripByCode).put(auth, updateTrip);
+
+// Login route
+router.route("/login").post(login);
+
+// Register route
+router.route("/register").post(register);
 
 module.exports = router;
